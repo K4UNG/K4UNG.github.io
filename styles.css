@@ -1,0 +1,106 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: hsl(322, 100%, 66%);
+    --pale: hsl(193, 100%, 96%);
+    --dark: hsl(192, 100%, 9%);
+    --blue: hsl(208, 11%, 55%);
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+body h1,
+body h2,
+body h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    padding: 30px 60px;
+    height: 80vh;
+    background-image: linear-gradient(hsla(209, 62%, 67%, 0.25), hsla(209, 62%, 67%, 0.25)), url(images/bg-hero-desktop.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head img {
+    width: 150px;
+}
+
+.head a button {
+    font-weight: 600;
+    background: white;
+    padding: 10px 40px;
+    border: none;
+    outline-style: none;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.head a button:hover {
+    color: var(--blue);
+}
+
+.hero-hero {
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-text {
+    width: 40%;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-top: 80px;
+}
+
+.hero-text p {
+    margin: 20px 0;
+}
+
+.hero-img {
+    width: 60%;
+    text-align: right;
+}
+
+.hero-img img {
+    max-width: 700px;
+}
+
+.hero-text a button {
+    background-color: var(--primary);
+    outline-style: none;
+    border: none;
+    color: var(--pale);
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 15px 45px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.hero-text a button:hover {
+    background-color: hsla(322, 100%, 66%, 0.7);
+}
