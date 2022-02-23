@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/K4UNG/K4UNG.github.io)
-- Live Site URL: [Live site URL](https://k4ung.github.io)
+- Live Site URL: [Live site URL](https://k4ung1.netlify.app)
 
 ## My process
 
