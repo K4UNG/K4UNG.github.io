@@ -1,4 +1,4 @@
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; color: white; margin-top: 50px;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 *,
@@ -87,7 +87,8 @@ body h3 {
     max-width: 700px;
 }
 
-.hero-text a button {
+.hero-text a button,
+.float-card a button {
     background-color: var(--primary);
     outline-style: none;
     border: none;
@@ -99,12 +100,14 @@ body h3 {
     transition: background-color .3s ease;
 }
 
-.hero-text a button:hover {
+.hero-text a button:hover,
+.float-card a button:hover {
     background-color: hsla(322, 100%, 66%, 0.7);
 }
 
 .cards {
-    padding: 150px 60px 100px;
+    padding: 150px 60px 200px;
+    position: relative;
 }
 
 .card {
@@ -134,12 +137,132 @@ body h3 {
     height: auto;
 }
 
-footer {
-    background-color: var(--dark);
-    height: 200px;
+.float-card {
+    height: 150px;
+    position: absolute;
+    background: white;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    padding: 30px 80px;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, 50%);
 }
 
-@media (max-width: 1100px) {
+.float-card h2 {
+    width: max-content;
+    font-size: medium;
+    margin: 20px 0;
+}
+
+footer {
+    padding: 150px 60px 20px;
+    background-color: var(--dark);
+}
+
+.footer-logo img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(294deg) brightness(105%) contrast(106%);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+}
+
+.footer-col1 {
+    list-style: none;
+    color: white;
+    width: max-content;
+}
+
+.footer-col1 li {
+    display: flex;
+    align-items: flex-start;
+    margin: 5px 0;
+}
+
+.footer-col1 p {
+    display: inline-block;
+    max-width: 400px;
+}
+
+.footer-col1 li img {
+    margin: 5px 8px;
+}
+
+.footer-col2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-col2 ul {
+    list-style: none;
+}
+
+.footer-col2 ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-col2 ul li {
+    width: max-content;
+    margin-bottom: 10px;
+    transition: .3s;
+    position: relative;
+}
+
+.footer-col2 ul li::after {
+    content: '';
+    background-color: white;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    transform-origin: center;
+    transition: 0.3s;
+}
+
+.footer-col2 ul li:hover::after{
+    width: 100%;
+}
+
+.footer-col3 ul {
+    list-style: none;
+    display: flex;
+}
+
+.footer-col3 ul li {
+    margin: 0 10px;
+}
+
+.footer-col3 ul li a {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    width: 26px;
+    height: 26px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-col3 ul li a:hover {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.footer-col3 p {
+    color: white;
+    font-size: 80%;
+    margin-top: 80px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1100px) {
     .card,
     .hero-hero {
         grid-template-columns: 1fr;
@@ -161,7 +284,7 @@ footer {
     }
 
     .cards {
-        padding: 100px 40px 50px;
+        padding: 100px 40px 100px;
     }
 
     .card-content p {
@@ -179,9 +302,54 @@ footer {
     .card-content {
         order: 1;
     }
+
+    .float-card {
+        padding: 15px 20px;
+    }
+
+    .float-card a button {
+        padding: 10px 15px;
+    }
+
+    .footer-col2 {
+        grid-template-columns: 1fr;
+    }
 }
 
-@media (max-width: 650px) {
+@media only screen and (max-width: 900px) {
+    
+    footer {
+        padding: 150px 30px 20px;
+    }
+
+    .footer-col3 ul {
+        width: max-content;
+        margin: auto;
+    }
+
+    .footer-col3 p {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .footer-content li {
+        margin: 10px 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col1 p {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .hero {
+        background-image: linear-gradient(hsla(209, 62%, 67%, 0.25), hsla(209, 62%, 67%, 0.25)), url(images/bg-hero-mobile.svg);
+    }
+
     .head img,
     .head a {
         width: 100px;
@@ -197,7 +365,7 @@ footer {
     }
 
     .cards {
-        padding: 100px 20px 50px;
+        padding: 100px 20px 100px;
     }
 
     .hero {
@@ -214,5 +382,9 @@ footer {
 
     .card {
         font-size: 80%;
+    }
+    
+    .float-card a button {
+        padding: 5px 10px;
     }
 }
