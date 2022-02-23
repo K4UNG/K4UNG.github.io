@@ -29,7 +29,6 @@ body h3 {
 
 .hero {
     padding: 30px 60px;
-    height: 80vh;
     background-image: linear-gradient(hsla(209, 62%, 67%, 0.25), hsla(209, 62%, 67%, 0.25)), url(images/bg-hero-desktop.svg);
     background-position: center;
     background-size: cover;
@@ -63,12 +62,12 @@ body h3 {
 
 .hero-hero {
     margin: 60px 0;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
 }
 
 .hero-text {
-    width: 40%;
+    min-width: 250px;
 }
 
 .hero-text h1 {
@@ -81,7 +80,6 @@ body h3 {
 }
 
 .hero-img {
-    width: 60%;
     text-align: right;
 }
 
@@ -103,4 +101,118 @@ body h3 {
 
 .hero-text a button:hover {
     background-color: hsla(322, 100%, 66%, 0.7);
+}
+
+.cards {
+    padding: 150px 60px 100px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 30px 80px;
+    border-radius: 50px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 40px 0;
+}
+
+.card-content {
+    min-width: 250px;
+}
+
+.card-content p {
+    max-width: 500px;
+}
+
+.card-img {
+    text-align: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: var(--dark);
+    height: 200px;
+}
+
+@media (max-width: 1100px) {
+    .card,
+    .hero-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-img {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .hero-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        padding: 40px 30px;
+    }
+
+    .cards {
+        padding: 100px 40px 50px;
+    }
+
+    .card-content p {
+        margin: 15px auto 30px;
+    }
+
+    .card-content h2 {
+        margin-top: 15px;
+    }
+
+    .card-img {
+      order: 0;  
+    }
+
+    .card-content {
+        order: 1;
+    }
+}
+
+@media (max-width: 650px) {
+    .head img,
+    .head a {
+        width: 100px;
+    }
+
+    .head a button {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 25px;
+    }
+
+    .cards {
+        padding: 100px 20px 50px;
+    }
+
+    .hero {
+        padding: 20px 30px;
+    }
+
+    .hero-hero {
+        margin: 15px 0 30px;
+    }
+
+    .hero-text p {
+        font-size: 80%;
+    }
+
+    .card {
+        font-size: 80%;
+    }
 }
